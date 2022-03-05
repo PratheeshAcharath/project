@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import '../Appform/application.css';
 
+
 class ApplicationComponent extends Component{
  
     constructor(props){ 
@@ -74,6 +75,9 @@ class ApplicationComponent extends Component{
     render(){
         return(
             <div>
+
+                
+      
 
             <div className="container">
                 <div className="row">
@@ -170,10 +174,22 @@ class ApplicationComponent extends Component{
                         </div>
                     </div>
                 </div>
+
+            
+      
+
             </div>
             </div>
+
+
+
         )
     }
 }
 
-export default ApplicationComponent 
+export default ApplicationComponent;
+
+
+    
+    
+ 
