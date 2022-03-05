@@ -55,7 +55,7 @@ a{color:inherit;text-decoration:none}
 }
 .login-html .sign-in:checked + .tab{
 	color:#fff;
-	border-color:#1161ee;
+	border-color:#202122;
 }
 .login-form{
 	min-height:345px;
