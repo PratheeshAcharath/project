@@ -2,8 +2,9 @@ import React from "react";
 
 import Sidebar from "../../components/sidebar/Sidebar";
 import "./home.css";
-import ApplicationComponent from "../../components/Appform/Application";
+
 import Login from "../../components/login/Login";
+import Application from "../../components/Appform/Application1";
 
 
 const Home = () => {
@@ -11,7 +12,7 @@ const Home = () => {
     <div className="home">
       
      
-    <ApplicationComponent />
+    <Application />
       
     </div>
   );
