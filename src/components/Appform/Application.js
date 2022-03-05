@@ -1,17 +1,17 @@
 
 import React, { Component } from 'react'
-import './application.css';
+import '../Appform/application.css';
 
 class ApplicationComponent extends Component{
-
-    constructor(props){
-        super(props)
+ 
+    constructor(props){ 
+        super(props) 
         this.state={
-            firstName:'',
-            lastName:'',
-            emailId:'',
-            phonenumber:'',
-            courselist:''
+            firstName:'', 
+            lastName:'', 
+            emailId:'', 
+            phonenumber:'', 
+            courselist:'' 
 
         }
 
@@ -22,7 +22,7 @@ class ApplicationComponent extends Component{
         this.changeCourseListHandler=this.changeCourseListHandler.bind(this);
         this.changeSelectBatchHandler=this.changeSelectBatchHandler.bind(this);
         this.changeStartingDateHandler=this.changeStartingDateHandler.bind(this);
-        this.changeEndingDateHandler=this.changeEndingDateHandler.bind(this);
+      
         this.changeUploadHandler=this.changeUploadHandler.bind(this);
         this.saveStudent=this.saveStudent.bind(this);
     }
@@ -55,15 +55,13 @@ class ApplicationComponent extends Component{
         this.setState({startingdate: event.target.value});
     }
 
-    changeEndingDateHandler=(event)=>{
-        this.setState({endingdate: event.target.value});
-    }
+    
 
     changeUploadHandler=(event)=>{
         this.setState({upload: event.target.value});
     }
 
-    saveStudent=(e)=>{
+    saveStudent=(e)=>{ 
         e.preventDefault();
         let student={firstName: this.state.firstName,lastName: this.state.lastName,emailId: this.state.emailId, address: this.state.address};
         console.log('Student=>'+JSON.stringify(student));
@@ -87,34 +85,36 @@ class ApplicationComponent extends Component{
                             <form>
                                 
                                 <div className="form-group">
-                                    <label>First Name: </label>
+                                   
                                     <input placeholder="First Name" name="firstName" className="form-control"
                                     value={this.state.firstName} onChange={this.changeFirstNameHandler}/>
                                 </div>
                                 <br></br>
                                 <div className="form-group">
-                                    <label>Last Name: </label>
+                                    
                                     <input placeholder="Last Name" name="lastName" className="form-control"
                                     value={this.state.lastName} onChange={this.changeLastNameHandler}/>
                                 </div>
                                 <br></br>
                                 <div className="form-group">
-                                    <label>Email: </label>
-                                    <input placeholder="Email" name="emailId" className="form-control"
-                                    value={this.state.emailId} onChange={this.changeEmailIdHandler}/>
+                                
+                                    <input placeholder="Email" name="email" className="form-control"
+                                    value={this.state.email} onChange={this.changeEmailIdHandler}/>
+                                    
                                 </div>
                                 <br></br>
                                 <div className="form-group">
-                                    <label>PhoneNumber: </label>
+                                   
                                     <input placeholder="PhoneNumber" name="phonenumber" className="form-control"
                                     value={this.state.phonenumber} onChange={this.changePhoneNumberHandler}/>
                                 </div>
                                 <br></br>
                                 <div className="form-group">
-                                <label>CourseList: </label>
-
-                                <select value={this.state.value} onChange={this.handleChange}>
+                                <label> </label>
+                                
+                                <select value={this.state.courselist} onChange={this.changeCourseListHandler}>
                                        
+                                       <option value="select">Select Course</option>
                                        <option value="fsd">Full Stack Developer</option>
                                        <option value="cyber">Cyber Security</option>
                                        <option value="data">Data Scientist</option>
@@ -122,55 +122,49 @@ class ApplicationComponent extends Component{
                                        <option value="machine">Machine Learning</option>
                                        
                                        </select>
+                                       
                                 </div>
                                 <br></br>
+                                
                                 <div className="form-group">
                                    <label>
-                                       Select your batch: 
+                         
                                        </label>
                                        <select value={this.state.value} onChange={this.handleChange}>
                                        
-                                       <option value="2021jan">2021JANUARY</option>
-                                       <option value="2021apr">2021APRIL</option>
-                                       <option value="2021aug">2021AUGUST</option>
-                                       <option value="2021dec">2021DECEMBER</option>
+                                       <option value="select">Select Batch</option>
+                                       <option value="B1">Batch 1</option>
+                                       <option value="B2">Batch 2</option>
+                                       <option value="B3">Batch 3</option>
+                                       <option value="B4">Batch 4</option>
                                        
                                        </select>
                                    
                                 </div>
                                 <br></br>
+                                Course Starting date
                                 <div className="form-group">
-                                    <label>
-                                        Course Starting Date: 
-                                    </label>
-                                        <select value={this.state.value} onChange={this.handleChange}>
-
-                                        </select>
-                                      
+                                  
+                                        <input placeholder="Course Starting" type="date"  name="startingdate" /> 
        
                                 </div>
                                 <br></br>
-                                <div className="form-group">
-                                    <label>
-                                        Course Ending Date: 
-                                    </label> 
-                                    
-                                        <select value={this.state.value} onChange={this.handleChange}>
+                                Course Ending date
+                               <div className="form-group">
+                                   
+                                   <input type="date" name="endingdate" />
 
-                                        </select>
-                                      
-       
-                                </div>
+                                   
+                               </div>
                                 <br></br>
+                                Upload Photo
                                 <div className="form-group">
-                                   <label>
-                                       Upload Photo
-                                   </label>
-                                   <input type="file" name="file" /> <button> Upload </button>
+                        
+                                   <input placeholder="Upload" type="file" name="file" />
                                 </div>
                                 <br></br>
-                                <button className="btn btn-success" onClick={this.saveStudent}>Save</button>
-                                <button className="btn btn-danger" onClick={this.cancel.bind} style={{marginLeft:"10px"}}>Cancel</button>
+                                
+                               <input type="submit" className="buttton" name="submit" />  
 
                             </form>
                         </div>

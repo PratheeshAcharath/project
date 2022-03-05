@@ -1,38 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import Home from '../../pages/home/Home';
+import React from 'react';
 import './Login.css'
-import validation from './validation';
 
-function Login() {
-	// storing form field values
-	const[formValues,setFormValues]=useState({username: "", password: ""})
-    //Manage form error values
-	const [formErrorValues,setFormErrorValues] = useState({});
-	
-	// Flag for form submission status
-	const[isSubmit,setIsSubmit] = useState(false);
-	// Manage field change
-	const handleChange = (event) => {
-		//console.log(event.target);
-		const { name,value}=event.target;
-		setFormValues({...formValues,[name]:value});
-		console.log(formValues);
-
-	}
-	//Manage form refresh
-	const handleSubmit=(event) =>{
-      event.preventDefault()
-	   setFormErrorValues(validation(formValues));
-	   setIsSubmit(true);
-	}
-	useEffect(()=>{
-		if(Object.keys(formErrorValues).length===0 && isSubmit){
-			alert("Login Successful")
-		}
-
-	},[formErrorValues])
-
-	return (
+const Login = () => {
+    return (
         <div className='body'>
 
             <div className="login-wrap">
@@ -44,22 +14,16 @@ function Login() {
 			<div className="sign-in-htm">
 				<div className="group">
 					<label for="user" className="label">Username</label>
-					<input id="user" name="username" type="text" class="input" required="" value={formValues.username} onChange={handleChange}></input>
-					<p>{formErrorValues.username}</p>
-				
+					<input id="user" type="text" class="input"></input>
 				</div>
 				<div className="group">
 					<label for="pass" className="label">Password</label>
-					<input id="pass" name="password" type="password" className="input" data-type="password" required="" value={formValues.password} onChange={handleChange}></input>
-				<p>{formErrorValues.password}</p>
+					<input id="pass" type="password" className="input" data-type="password"></input>
 				</div>
 				
 				<div className="group">
-				<button className="button" value="Login " onSubmit={handleSubmit}>
-					Login
-					</button>
-					
-					</div>
+					<input type="submit" className="button" value="Login "></input>
+				</div>
 				<div className="hr"></div>
 				<div className="foot-lnk">
 					<a href="#forgot">Forgot Password?</a>
@@ -96,14 +60,5 @@ function Login() {
         </div>
     );
 };
-
-function App() {
-	return (
-	  <div className="App">
-	   
-	   <Home />
-	  </div>
-	);
-  }
 
 export default Login;

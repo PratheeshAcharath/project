@@ -5,13 +5,11 @@ if(!formValues.username){
     errors.username = "Username is required";
 }
 if(!formValues.password){
-    errors.username = "Password is required";
+    errors.password = "Password is required";
 }
 else if(formValues.password.length<5){
         errors.username = "Password is too short";
 }
 return errors;
 }
-
-
 export default validation;

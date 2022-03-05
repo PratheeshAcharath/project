@@ -2,7 +2,7 @@
 	margin:0;
 	
 	
-	background-image: url('./images/bgg.jpg');
+	background-image: url('../../components/images/bgg.jpg');
 	font:600 16px/18px 'Open Sans',sans-serif;
 }
 *,:after,:before{box-sizing:border-box}
