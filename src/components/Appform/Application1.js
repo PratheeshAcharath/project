@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Appform/application1.css';
-import { Validateapplication } from './validate';
+
 import { useForm } from "react-hook-form";
 import axios from 'axios';
 import {useNavigate} from 'react-router';
