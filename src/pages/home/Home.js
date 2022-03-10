@@ -1,6 +1,6 @@
 import React from "react";
 
-import Sidebar from "../../components/sidebar/Sidebar";
+
 import "./home.css";
 
 import Login from "../../components/login/Login";
@@ -12,7 +12,7 @@ const Home = () => {
     <div className="home">
       
      
-    <Application />
+    
       
     </div>
   );

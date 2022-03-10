@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./navbar1.css";
 
 let nav = document.querySelector(".nav");
@@ -14,7 +15,8 @@ const Navbar1 = () => {
     <div class="nav">
         <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="#">Apply</a></li>
+            <li><a href="#">Apply</a> </li>
+            
             
             <li><a href="#">Logout</a></li>
         </ul>

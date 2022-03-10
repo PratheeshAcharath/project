@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Login.css'
 import validation from './validation';
+import { Link } from 'react-router-dom';
 
 function Login() {
 	// storing form field values
@@ -55,13 +56,14 @@ function Login() {
 				
 				<div className="group">
 				<button className="button" value="Login " onClick={handleSubmit}>
-					Login
+					Login 
 					</button>
 					
 					</div>
 				<div className="hr"></div>
 				<div className="foot-lnk">
 					<a href="#forgot">Forgot Password?</a>
+					
 				</div>
 			</div>
 			{/* <div className="sign-up-htm">
