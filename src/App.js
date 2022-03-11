@@ -8,12 +8,15 @@ import Admin from './components/Admin/admin';
 import Application from './components/Appform/Application1';
 import { Link } from 'react-router-dom';
 import StudentHome from './components/studenthome/stdhome';
+import Status from './components/Studentstatus/stdstatus';
+import Batchmanagerslist from './components/Batchmanagerslist/batchmanangerslist';
+import Courses from './components/courses/courses';
 
 function App() {
   return (
     <div className="App">
       
-     <Login />
+     <Admin/>
      
 
 

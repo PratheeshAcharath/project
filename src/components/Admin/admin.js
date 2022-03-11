@@ -1,5 +1,6 @@
 import React from "react";
 import '../Admin/admin.css';
+import Navbar1 from '../navbar/Navbar1';
 
 let nav = document.querySelector(".nav");
 function toggle(){
@@ -8,6 +9,9 @@ function toggle(){
 const Admin = () => {
     return (
         <header>
+
+
+
             <div class="logo">
         <h3>ICTAK</h3>
     </div>
@@ -23,11 +27,19 @@ const Admin = () => {
     <div class="toggle">
         <i class="fas fa-bars" onClick="toggle()"></i>
     </div>
+
+    
         </header>
-   
+
+        
+       
+    
    
 
     );
 };   
+
+
+
 
 export default Admin;
