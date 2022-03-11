@@ -6,7 +6,7 @@ import Navbar1 from '../navbar/Navbar1';
 
 function Status(props) {
     
-  
+   
     
     return (
         <div className='statustable'>
@@ -28,3 +28,5 @@ function Status(props) {
 }
 
 export default Status;
+
+

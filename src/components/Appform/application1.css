@@ -1,4 +1,4 @@
-
+/*
 .invalid {
     border:1px solid red !important;
    }
@@ -48,9 +48,9 @@ input[type=text], input {
 .button{
   border: rgb(37, 36, 36);
   background-color: black;
-}
+}*/
 
-/*
+
 *{
   margin:0;
   padding:0;
@@ -169,4 +169,4 @@ max-width: 100%;
   margin-top: 40%;
   position:sticky;
 }
-}*/
+}

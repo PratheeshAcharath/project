@@ -17,8 +17,8 @@ import Batchnav from './components/Batchmanagerslist/batchnav';
 function App() {
   return (
     <div className="App">
-      <Batchnav />
-     <Courses />
+     <Application />
+
      
 
 
