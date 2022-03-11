@@ -11,12 +11,13 @@ import StudentHome from './components/studenthome/stdhome';
 import Status from './components/Studentstatus/stdstatus';
 import Batchmanagerslist from './components/Batchmanagerslist/batchmanangerslist';
 import Courses from './components/courses/courses';
+import BatchManager from './components/Batchmanagershome/batchmanagers';
 
 function App() {
   return (
     <div className="App">
       
-     <Admin/>
+     <Admin />
      
 
 
