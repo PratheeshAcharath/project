@@ -19,7 +19,9 @@ $(document).on("click", ".delete", function(){
 
 function Batchmanagerslist(props) {
 
-
+    
+            
+            
 
     return (
         <div className='batchM'>

@@ -12,12 +12,13 @@ import Status from './components/Studentstatus/stdstatus';
 import Batchmanagerslist from './components/Batchmanagerslist/batchmanangerslist';
 import Courses from './components/courses/courses';
 import BatchManager from './components/Batchmanagershome/batchmanagers';
+import Batchnav from './components/Batchmanagerslist/batchnav';
 
 function App() {
   return (
     <div className="App">
-      
-     <Login />
+      <Batchnav />
+     <Courses />
      
 
 
