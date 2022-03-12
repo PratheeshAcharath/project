@@ -3,7 +3,7 @@ import './Login.css'
 import validation from './validation';
 import { Link } from 'react-router-dom';
 
-function Login() {
+function Login(props) {
 	// storing form field values
 	const[formValues,setFormValues]=useState({username: "", password: ""})
     //Manage form error values

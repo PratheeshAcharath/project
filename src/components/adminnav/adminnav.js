@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./navbar1.css";
+import "./adminnav.css";
 
 let nav = document.querySelector(".nav");
 function toggle(){
     nav.classList.toggle("active");
 }
-const Navbar1 = () => {
+const Adminnav = (props) => {
     return (
         <header>
             <div class="logo">
@@ -14,12 +14,11 @@ const Navbar1 = () => {
     </div>
     <div class="nav">
         <ul>
-            <li><Link to="/Studenthome">Home</Link></li>
-            <li><Link to="/studentapplication">Apply</Link> </li>
-            <li><Link to="/studentstatus">Status</Link></li>
-            <li><Link to="/login">Logout</Link></li>
+        <li><Link to="/Admin">Home</Link></li>
+            <li> <Link to="/bmlist">Batchmangers</Link></li>
+            <li><Link to="/courselist">Courses</Link></li>
             
-            
+            <li><Link to="/login">Log out</Link></li>
         </ul>
         <i class="fas fa-times" onClick="toggle()"></i>
     </div>
@@ -33,4 +32,4 @@ const Navbar1 = () => {
     );
 };   
 
-export default Navbar1;
+export default Adminnav;

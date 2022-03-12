@@ -6,9 +6,19 @@ import Navbar1 from '../navbar/Navbar1';
 
 function Status(props) {
     
-   
+    useEffect(() => {
+        axios.get('/api/application/postapplication'
+        
+          )
+          .then(function (response) {
+            console.log(response);
+          })
+
+        },[])
     
     return (
+        <div className='Navbar'>
+            <Navbar1 />
         <div className='statustable'>
             
             <table>
@@ -21,6 +31,7 @@ function Status(props) {
                 </tr>
                
             </table>
+            </div>
             </div>
        
     );

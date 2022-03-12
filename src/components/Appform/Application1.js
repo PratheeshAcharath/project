@@ -7,7 +7,7 @@ import {useNavigate} from 'react-router';
 import { useEffect, useState } from 'react';
 import Navbar1 from '../navbar/Navbar1';
 
-function Application() {
+function Application(props) {
   const {
     register,
     handleSubmit,
@@ -108,7 +108,7 @@ function Application() {
                 onKeyUp={() => {
                   trigger("course");
                 }} >
-        <option value="select">Select your Course</option>
+        <option value="" disabled>Select your Course</option>
         <option value="fsd">Full Stack Developer</option>
         <option value="cyber">Cyber Security</option>
         <option value="data">Data Scientist</option>
@@ -125,7 +125,7 @@ function Application() {
                   trigger("batch");
                 }} >
                                        
-        <option value="select">Select your Batch</option>
+        <option value="" disabled>Select your Batch</option>
         <option value="B1">Batch 1</option>
         <option value="B2">Batch 2</option>
         <option value="B3">Batch 3</option>

@@ -6,7 +6,7 @@ let nav = document.querySelector(".nav");
 function toggle(){
     nav.classList.toggle("active");
 }
-const Batchnav = () => {
+const Batchnav = (props) => {
     return (
         <header>
             <div class="logo">
@@ -14,11 +14,11 @@ const Batchnav = () => {
     </div>
     <div class="nav">
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Batchmangers List</a> </li>
-            <li><a href="#">Course List</a></li>
+            <li><Link to="/bmh">Home</Link></li>
+            <li> <Link to="/pending">Pending</Link></li>
+            <li><Link to="/history">History</Link></li>
             
-            <li><a href="#">Logout</a></li>
+            <li><Link to="/login">Log out</Link></li>
         </ul>
         <i class="fas fa-times" onClick="toggle()"></i>
     </div>

@@ -3,6 +3,7 @@ import "./batchmanagerslist.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 import $ from 'jquery';
 
+
 $(document).on("click", ".edit", function(){		
     $(this).parents("tr").find("td:not(:last-child)").each(function(){
         $(this).html('<input type="text" class="form-control" value="' + $(this).text() + '">');
