@@ -25,11 +25,7 @@ export const Coloumns = [
       
       accessor: 'photo'
     },
-    {
-      Header: 'Email',
-     
-      accessor: 'email'
-    },
+    
     {
       Header: 'Phone',
      
@@ -41,11 +37,7 @@ export const Coloumns = [
      
       accessor: 'batch'
     },
-    {
-      Header: 'Course Duration',
-     
-      accessor: 'duration'
-    },
+    
     {
       Header: 'Status',
      
