@@ -4,30 +4,44 @@ const multer = require("multer");
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "images");
+    cb(null, "./images");
   },
   filename: function (req, file, cb) {
-    cb(null, req.body.name);
+    cb(null, req.body.name + " " + file.originalname);
   },
 });
 
-const upload = multer({
+const setLimit = 1024 * 1024 * 2;
+
+const uploadFile = multer({
   storage: storage,
   limits: {
-    fileSize: 100 * 100,
+    fileSize: setLimit,
   },
-});
+  fileFilter: function (req, file, cb) {
+    if (
+      file.mimetype === "image/jpg" ||
+      file.mimetype === "image/jpeg" ||
+      file.mimetype === "image/png"
+    ) {
+      cb(null, true);
+    } else {
+      cb("Only images are allowed");
+    }
+  },
+}).single("photo");
 
-router.post("/form", upload.single("file"), async (req, res) => {
+router.post("/form", uploadFile, async (req, res) => {
+  console.log(req.body.path);
   try {
     const newForm = new Form({
-      name: req.body.username,
+      name: req.body.name,
       email: req.body.email,
       photo: req.file.path,
-      phone: req.body.phoneno,
+      phone: req.body.phone,
       course: req.body.course,
-      startDate: req.body.startingdate,
-      endDate: req.body.endingdate,
+      startDate: req.body.startDate,
+      endDate: req.body.endDate,
     });
     await newForm.save();
     res.status(200).json(newForm);

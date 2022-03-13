@@ -1,6 +1,9 @@
 const router = require("express").Router();
 const BatchManager = require("../models/BatchManager");
 const Course = require("../models/Course");
+const nodemailer = require("nodemailer");
+const User = require("../models/User");
+const bcrypt = require("bcrypt");
 
 // ! ADD NEW BATCH MANAGER
 router.post("/bm", async (req, res) => {
@@ -8,6 +11,56 @@ router.post("/bm", async (req, res) => {
   try {
     const savedBM = await newBM.save();
     res.status(200).json(savedBM);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
+// !ASSIGN EMAIL AND PASSWORD FOR BATCH MANAGER
+router.post("/credential/:id", async (req, res) => {
+  const id = req.params.id;
+  const name = req.body.name;
+  const bm = await BatchManager.findById({ _id: id });
+  if (!bm) {
+    return res.status(400).send("Batch manager not found");
+  }
+  try {
+    const salt = await bcrypt.genSalt(10);
+    password = await bcrypt.hash(req.body.password, salt);
+    const newUser = new User({
+      name: req.body.name,
+      email: req.body.email,
+      password: password,
+    });
+    await newUser.save((err, user) => {
+      if (error) {
+        return res.status(400).json("Something went wrong");
+      } else {
+        var tranporter = nodemailer.createTransport({
+          service: "gmail",
+          auth: {
+            user: "adminictakid@gmail.com",
+            pass: "admin@ictak",
+          },
+        });
+
+        let mailOptions = {
+          from: "adminictakid@gmail.com", //this is email is not created yet
+          to: req.body.email,
+          subject: "Account Credentials",
+          text: "Your password and Email for login",
+          html: `Your email: ${req.body.email} & Your password: ${req.body.password}`,
+        };
+
+        tranporter.sendMail(mailOptions, function (error, info) {
+          if (error) {
+            res.status(400).json("Something went wrong");
+          } else {
+            return res.status(200).json({ user });
+          }
+        });
+      }
+    });
   } catch (error) {
     res.status(500).json(error);
   }

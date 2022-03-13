@@ -1,3 +1,6 @@
+body{
+  background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+}
 table {
     margin-left: 251px;
     margin-top: 150px;

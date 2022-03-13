@@ -1,49 +1,31 @@
 
 export const Coloumns = [
-    {
-      Header: 'No',
-     
-      accessor: 'No',
-      disableFilters: true,
-      sticky: 'left'
-    },
-    {
-      Header: 'Name',
-      
-      accessor: 'name',
-      sticky: 'left'
-    },
+  {
+    Header: 'No',
    
-    {
-      Header: 'Course',
-     
-      accessor: 'course',
-      
-    },
-    {
-      Header: 'Photo',
-      
-      accessor: 'photo'
-    },
+    accessor: 'No',
+    disableFilters: true,
+    sticky: 'left'
+  },
+  {
+    Header: 'Name',
     
-    {
-      Header: 'Phone',
-     
-      accessor: 'phone'
-    },
+    accessor: 'name',
+    sticky: 'left'
+  },
+ 
+  {
+    Header: 'Course',
+   
+    accessor: 'course',
     
-    {
-      Header: 'Batch',
-     
-      accessor: 'batch'
-    },
-    
-    {
-      Header: 'Status',
-     
-      accessor: 'status'
-    },
-    
-  ]
+  },
   
+  {
+    Header: 'Status',
+   
+    accessor: 'status'
+  },
   
+]
+
